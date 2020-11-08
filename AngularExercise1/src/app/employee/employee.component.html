@@ -1,0 +1,29 @@
+<!-- Interpolation – Display Employee details  -->
+<div>
+    <h4>Employee Details..</h4>
+    
+    <p>employeeId:{{employee1.employeeId}}</p>
+    <p>employeeName:{{employee1.employeeName}}</p>     
+    <p>employeeSalary:{{employee1.employeeSalary}}</p> 
+</div> 
+ <br />
+ <h2>Display employee department details </h2>
+ <div *ngFor="let employee of employees">
+    <div *ngIf="employee.employeePermanent">    
+    <h3>Employee {{employee.employeeName}} Details</h3>
+    <p>employeeId:{{employee.employeeId}}</p>
+    <p>employeeName:{{employee.employeeName}}</p>     
+    <p>employeeSalary:{{employee.employeeSalary|currency:'INR'}}</p> 
+    <p>employeePermanent:{{employee.employeePermanent? 'YES':'NO'}}</p> 
+    <P *ngIf="employee.employeePermanent">employeePermanent:YES</P>
+    <p>employeeDepartmentId:{{employee.department.departmentId}}</p> 
+    <p>employeeDepartmentName:{{employee.department.departmentName}}</p> 
+    <div *ngFor="let empSkill of employee.skill">
+        <p>employeeSkillId:{{empSkill.skillId}}</p>  
+        <p>employeeSkillName:{{empSkill.skillName}}</p> 
+    </div> 
+    <p>DateOfBirth:{{employee.date|date:'mediumDate'}}</p>
+ </div>
+ </div>
+
+ 
