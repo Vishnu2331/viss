@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    <definition name="base.definition"  
+        template="/WEB-INF/views/tiles/layouts/layout1.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/views/tiles/template/header.jsp" /> 
+        <put-attribute name="body" value="" /> 
+       
+    </definition>  
+    <definition name="user_registration" extends="base.definition">  
+        <put-attribute name="title" value="user_registration" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/user_registration.jsp" />  
+    </definition>
+     <definition name="login" extends="base.definition">  
+        <put-attribute name="title" value="login" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />  
+    </definition> 
+    <definition name="home" extends="base.definition">  
+        <put-attribute name="title" value="login" />  
+        <put-attribute name="body" value="/WEB-INF/views/tiles/template/home.jsp" />  
+    </definition>  
+    <definition name="base.definition1"  
+        template="/WEB-INF/views/tiles/layouts/layout2.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/views/tiles/template/header2.jsp" /> 
+        <put-attribute name="body" value="" /> 
+       
+    </definition>  
+    <definition name="my_pets" extends="base.definition1">  
+        <put-attribute name="title" value="my_pets" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/my_pets.jsp" />  
+    </definition>
+     <definition name="pet_form" extends="base.definition1">  
+        <put-attribute name="title" value="add_pet" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/pet_form.jsp" />  
+    </definition> 
+    <definition name="pet_home" extends="base.definition1">  
+        <put-attribute name="title" value="home" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/pet_home.jsp" />  
+    </definition>  
+    <definition name="logout" extends="base.definition1">  
+        <put-attribute name="title" value="logout" />  
+        <put-attribute name="body" value="/WEB-INF/views/pages/logout.jsp" />  
+    </definition> 
+  
+</tiles-definitions>  
