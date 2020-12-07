@@ -1,0 +1,4 @@
+<h3>Planes waiting for Pilot approval </h3>
+<div *ngFor= " let aeroplane of aeroplanes | async " style="width: 300px;">
+    <app-pilot-approval-list [aeroplane]='aeroplane'></app-pilot-approval-list>
+</div>

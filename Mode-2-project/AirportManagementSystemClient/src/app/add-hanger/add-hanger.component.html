@@ -1,0 +1,19 @@
+<h3 style="text-align: center;">Aeroplane Form</h3>
+<div [hidden]="!submitted" class="form">
+    <h4 style="color:green;">{{message}}</h4> 
+ </div>
+<div  [hidden]="submitted" style="width: 300px;" class="form">
+  <form (ngSubmit)="onSubmit()" #hangerForm="ngForm">
+    <div class="form-group">
+      <label for="name">Hanger Name</label>
+      <input type="text" class="form-control" id="hangerName" required [(ngModel)]="hanger.hangerName" name="hangerName" #hangerName="ngModel" [class.is-invalid]="hangerName.invalid && hangerName.touched">
+      <small class="text-danger" [class.d-none]="hangerName.valid || hangerName.untouched">hangerName is required</small>
+    </div>
+    <div class="form-group">
+        <label for="name"> Hanger Capacity</label>
+        <input type="text" class="form-control" id="hangerCapacity" required [(ngModel)]="hanger.hangerCapacity" name="hangerCapacity" #hangerCapacity="ngModel" [class.is-invalid]="hangerCapacity.invalid && hangerCapacity.touched">
+        <small class="text-danger" [class.d-none]="hangerCapacity.valid ||hangerCapacity.untouched">hangerCapacity is required</small>
+      </div>   
+    <button type="submit" class="btn btn-success" [disabled]="hangerForm.form.invalid">Submit</button>
+  </form>  
+</div>

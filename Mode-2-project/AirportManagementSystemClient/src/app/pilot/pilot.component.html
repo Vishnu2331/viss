@@ -1,0 +1,25 @@
+<div class="modal-body">
+    <table class="table table-striped">
+        <thead>
+            <tr>  
+              <th>Pilot ID</th>
+              <th>Pilot First Name</th>
+              <th>Pilot Last Name</th>
+              <th>Pilot Gender</th>
+              <th>Pilot contact Number</th>
+              <th>Pilot Age</th>  
+            </tr>
+          </thead>
+    <tbody>
+     <ng-container *ngFor="let pilot of pilots | async ">
+      <tr>
+        <td>{{pilot.pilotId}}</td>
+        <td>{{pilot.pilotFirstName}}</td>  
+        <td>{{pilot.pilotLastName}}</td>
+        <td>{{pilot.pilotGender}}</td>
+        <td>{{pilot.pilotContactNumber}}</td>
+        <td>{{pilot.pilotAge}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+    </table>

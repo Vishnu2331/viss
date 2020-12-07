@@ -1,0 +1,20 @@
+<h3 style="text-align:center">Admin Login Form</h3>
+<div [hidden]="submitted" class="form">
+    <h4 style="color: red;">{{message}}</h4> 
+ </div>
+<div style="width: 300px;" class="form">
+  <form (ngSubmit)="onSubmit()" #adminForm="ngForm">
+    <div class="form-group">
+      <label for="name">Admin Email</label>
+      <input type="email" class="form-control" id="adminEmail" required [(ngModel)]="admin.adminEmail" name="adminEmail" #adminEmail="ngModel" [class.is-invalid]="adminEmail.invalid && adminEmail.touched">
+      <small class="text-danger" [class.d-none]="adminEmail.valid || adminEmail.untouched">Email is required</small>
+    </div>
+    <div class="form-group">
+        <label for="name">Password</label>
+        <input type="password" class="form-control" id="adminPassword" required [(ngModel)]="admin.adminPassword" name="adminPassword" #adminPassword="ngModel" [class.is-invalid]="adminPassword.invalid && adminPassword.touched">
+        <small class="text-danger" [class.d-none]="adminPassword.valid || adminPassword.untouched">Admin Password is required</small>
+      </div>
+    <button type="submit" class="btn btn-success" [disabled]="adminForm.form.invalid">Submit</button>
+  </form>
+</div>
+ 

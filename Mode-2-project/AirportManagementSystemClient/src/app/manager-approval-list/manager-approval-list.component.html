@@ -1,0 +1,18 @@
+<div *ngIf="manager && manager.managerStatus==null">
+    <div>
+        <label>Name: </label> {{manager.managerId}}
+    </div>
+    <div>
+        <label>FirstName: </label> {{manager.managerFirstName}}
+    </div>
+    <div>
+        <label>LastName: </label> {{manager.managerLastName}}
+    </div>
+    <div>
+        <label>LastName: </label> {{manager.managerGender}}
+    </div>
+    <label>Status: </label> 
+    <span class="button is-small btn-info" (click)="acceptManager()">Accept</span> 
+    <span class="button is-small btn-info" (click)="rejectManager()">Reject</span> 
+    <hr/>
+</div>

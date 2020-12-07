@@ -1,0 +1,63 @@
+<h3 style="text-align: center;">Manager Registration Form</h3>
+<div [hidden]="!submitted" class="form">
+    <h4>You submitted successfully!</h4>  
+  </div>
+<div [hidden]="submitted" style="width: 300px;" class="form">
+  <form (ngSubmit)="onSubmit()" #managerForm="ngForm">
+    <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" id="managerEmail" required [(ngModel)]="manager.managerEmail" name="managerEmail" #managerEmail="ngModel" [class.is-invalid]="managerEmail.invalid && managerEmail.touched">
+        <small class="text-danger" [class.d-none]="managerEmail.valid || managerEmail.untouched">Email is required</small>
+      </div>
+    <div class="form-group">
+      <label for="name">FirstName</label>
+      <input type="text" class="form-control" id="managerFirstName" required [(ngModel)]="manager.managerFirstName" name="managerFirstName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">First Name is required</small>
+    </div>
+     
+    <div class="form-group">
+        <label for="name">LastName</label>
+        <input type="text" class="form-control" id="managerLastName" required [(ngModel)]="manager.managerLastName" name="managerLastName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Last Name is required</small>
+      </div>
+ 
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" class="form-control" id="managerAge" required [(ngModel)]="manager.managerAge" name="managerFirstName" #age="ngModel" [class.is-invalid]="age.invalid && age.touched" pattern="^\d{2}$">
+      <div *ngIf="age.errors && (age.invalid || age.touched)">
+        <small class="text-danger" *ngIf="age.errors.required">Age is required</small>      
+        <small class="text-danger" *ngIf="age.errors.pattern">Age must be two digits</small>      
+      </div>
+    </div>
+ 
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="managerGender" value="MALE" [(ngModel)]="manager.managerGender" #gender="ngModel" required > 
+        <label class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="managerGender" value="FEMALE" [(ngModel)]="manager.managerGender" #gender="ngModel" required>
+        <label class="form-check-label">Female</label>
+      </div>
+      <div *ngIf="gender.invalid && gender.untouched" class="text-danger"> 
+        Gender is required
+     </div>
+    </div>
+ 
+    <div class="form-group">
+        <label for="name">Contact Number</label>
+        <input type="text" class="form-control" id="managerContactNumber" required [(ngModel)]="manager.managerContactNumber" name="managerContactNumber" #managerContactNumber="ngModel" [class.is-invalid]="managerContactNumber.invalid && managerContactNumber.touched">
+        <small class="text-danger" [class.d-none]="managerContactNumber.valid || managerContactNumber.untouched">Contact Number  is required</small>
+      </div>
+
+    <div class="form-group">
+        <label for="name">Password</label>
+        <input type="password" class="form-control" id="managerPassword" required [(ngModel)]="manager.managerPassword" name="managerPassword" #managerPassword="ngModel" [class.is-invalid]="managerPassword.invalid && managerPassword.touched">
+        <small class="text-danger" [class.d-none]="managerPassword.valid || managerPassword.untouched">manager Password is required</small>
+      </div>
+    <button type="submit" class="btn btn-success" [disabled]="managerForm.form.invalid">Submit</button>
+  </form>
+</div>
+ 
+

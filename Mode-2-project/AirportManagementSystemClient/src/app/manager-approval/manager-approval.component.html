@@ -1,0 +1,5 @@
+<h3>Managers Waiting For Approval </h3>
+<div *ngFor= " let manager of managers | async " style="width: 300px;">
+    <app-manager-approval-list [manager]='manager'></app-manager-approval-list>
+</div>
+ 

@@ -1,0 +1,64 @@
+
+<h3 style="text-align:center">Admin Registration Form</h3>
+<div [hidden]="submitted" style="width: 300px;" class="form">
+  <form (ngSubmit)="onSubmit()" #adminForm="ngForm">
+    <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" id="adminEmail" required [(ngModel)]="admin.adminEmail" name="adminEmail" #adminEmail="ngModel" [class.is-invalid]="adminEmail.invalid && adminEmail.touched">
+        <small class="text-danger" [class.d-none]="adminEmail.valid || adminEmail.untouched">Email is required</small>
+      </div>
+    <div class="form-group">
+      <label for="name">FirstName</label>
+      <input type="text" class="form-control" id="adminFirstName" required [(ngModel)]="admin.adminFirstName" name="adminFirstName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+      <small class="text-danger" [class.d-none]="name.valid || name.untouched">First Name is required</small>
+    </div>
+
+    <div class="form-group">
+        <label for="name">LastName</label>
+        <input type="text" class="form-control" id="adminLastName" required [(ngModel)]="admin.adminLastName" name="adminLastName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Last Name is required</small>
+      </div>
+ 
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" class="form-control" id="adminAge" required [(ngModel)]="admin.adminAge" name="adminFirstName" #age="ngModel" [class.is-invalid]="age.invalid && age.touched" pattern="^\d{2}$">
+      <div *ngIf="age.errors && (age.invalid || age.touched)">
+        <small class="text-danger" *ngIf="age.errors.required">Age is required</small>      
+        <small class="text-danger" *ngIf="age.errors.pattern">Age must be two digits</small>      
+      </div>
+    </div>
+ 
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="adminGender" value="MALE" [(ngModel)]="admin.adminGender" #gender="ngModel" required > 
+        <label class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="adminGender" value="FEMALE" [(ngModel)]="admin.adminGender" #gender="ngModel" required>
+        <label class="form-check-label">Female</label>
+      </div>
+      <div *ngIf="gender.invalid && gender.untouched" class="text-danger"> 
+        Gender is required
+     </div>
+    </div>
+ 
+    <div class="form-group">
+        <label for="name">Contact Number</label>
+        <input type="text" class="form-control" id="adminContactNumber" required [(ngModel)]="admin.adminContactNumber" name="adminContactNumber" #adminContactNumber="ngModel" [class.is-invalid]="adminContactNumber.invalid && adminContactNumber.touched">
+        <small class="text-danger" [class.d-none]="adminContactNumber.valid || adminContactNumber.untouched">Contact Number  is required</small>
+      </div>
+
+    <div class="form-group">
+        <label for="name">Password</label>
+        <input type="password" class="form-control" id="adminPassword" required [(ngModel)]="admin.adminPassword" name="adminPassword" #adminPassword="ngModel" [class.is-invalid]="adminPassword.invalid && adminPassword.touched">
+        <small class="text-danger" [class.d-none]="adminPassword.valid || adminPassword.untouched">Admin Password is required</small>
+      </div>
+    <button type="submit" class="btn btn-success" [disabled]="adminForm.form.invalid">Submit</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted" class="form">
+  <h4>You submitted successfully!</h4>
+</div>
+

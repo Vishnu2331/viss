@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">Kadapa</a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a routerLink="/" class="nav-link">Home</a></li>
+               
+            </ul>
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+              <li class="nav-item"><a  class="nav-link" data-toggle="modal" data-target="#myModal">Signup</a></li>
+              <li class="nav-item"><a href="#" class="nav-link" data-toggle="modal" data-target="#myModal1">Login</a></li>
+              <!-- <button type="button" class="nav-item" data-toggle="modal" data-target="#myModal">Signup </button> -->
+            </ul>
+        </div>
+    </div>
+  </nav>
+  
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+  
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+                    <a routerLink="/adminRegister" class="btn btn-primary active" role="button" routerLinkActive="active" data-dismiss="modal">Admin</a>
+                    <a routerLink="/managerRegister" class="btn btn-primary active" role="button" routerLinkActive="active" data-dismiss="modal">Manager</a>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+  
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+                    <a routerLink="/adminLogin" class="btn btn-primary active" role="button" routerLinkActive="active" data-dismiss="modal">Admin</a>
+                    <a routerLink="/managerLogin" class="btn btn-primary active" role="button" routerLinkActive="active" data-dismiss="modal">Manager</a>
+                  
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

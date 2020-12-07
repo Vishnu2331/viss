@@ -1,0 +1,4 @@
+<h3>Planes waiting for hanger approval </h3>
+<div *ngFor= " let aeroplane of aeroplanes | async " style="width: 300px;">
+    <app-hanger-approval-list [aeroplane]='aeroplane'></app-hanger-approval-list>
+</div>

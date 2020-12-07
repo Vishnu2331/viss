@@ -1,0 +1,21 @@
+<h3 style="text-align:center;">Aeroplane Form</h3>
+<div [hidden]="!submitted" class="form">
+    <h4 style="color:green;">{{message}}</h4> 
+ </div>
+<div [hidden]="submitted" style="width: 300px;" class="form">
+  <form (ngSubmit)="onSubmit()" #aeroplaneForm="ngForm">
+    <div class="form-group">
+      <label for="name">Aeroplane Name</label>
+      <input type="text" class="form-control" id="aeroplaneName" required [(ngModel)]="aeroplane.aeroplaneName" name="aeroplaneName" #aeroplaneName="ngModel" [class.is-invalid]="aeroplaneName.invalid && aeroplaneName.touched">
+      <small class="text-danger" [class.d-none]="aeroplaneName.valid || aeroplaneName.untouched">Name is required</small>
+    </div>
+    <div class="form-group">
+        <label for="name">Aeroplane Company Name</label>
+        <input type="text" class="form-control" id="aeroplaneCompanyName" required [(ngModel)]="aeroplane.aeroplaneCompanyName" name="aeroplaneCompanyName" #aeroplaneCompanyName="ngModel" [class.is-invalid]="aeroplaneCompanyName.invalid && aeroplaneCompanyName.touched">
+        <small class="text-danger" [class.d-none]="aeroplaneCompanyName.valid || aeroplaneCompanyName.untouched">Company Name is required</small>
+      </div>
+    <button type="submit" class="btn btn-success" [disabled]="aeroplaneForm.form.invalid">Submit</button>
+  </form>
+</div>
+ 
+

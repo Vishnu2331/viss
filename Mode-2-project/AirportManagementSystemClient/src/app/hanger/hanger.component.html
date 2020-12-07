@@ -1,0 +1,23 @@
+
+<div class="modal-body">
+    <table class="table table-striped">
+        <thead>
+            <tr>  
+              <th>Hanger ID</th>
+              <th>Hanger Name</th>
+              <th>Hanger Availability</th>  
+              <th>Hanger Capacity</th>
+            </tr>
+          </thead>
+    <tbody>
+     <ng-container *ngFor="let hanger of hangers | async ">
+      <tr>
+        <td>{{hanger.hangerId}}</td>
+        <td>{{hanger.hangerName}}</td>  
+        <td>{{hanger.hangerAvailability}}</td>
+        <td>{{hanger.hangerCapacity}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+    </table>
+    </div>

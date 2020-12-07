@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>  
+          <th>Aeroplane ID</th>
+          <th>Aerplane Name</th>
+          <th>Aeroplane Company Name</th>
+          <th>Aeroplane Hanger Status</th>
+          <th>Aeroplane Pilot Status</th>
+        </tr>
+      </thead> 
+<tbody>
+ 
+  <tr *ngFor="let aeroplane of aeroplanes | async" >
+    <td #aId>{{aeroplane.aeroplaneId}}</td>
+    <td>{{aeroplane.aeroplaneName}}</td>  
+    <td>{{aeroplane.aeroplaneCompanyName}}</td>
+    <td>{{aeroplane.aeroplaneHangerStatus}}</td>
+    <td>{{aeroplane.aeroplanePilotStatus}}</td>
+    
+  </tr>
+
+</tbody>  
+</table>  

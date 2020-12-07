@@ -1,0 +1,16 @@
+<div *ngIf="aeroplane && aeroplane.aeroplanePilotStatus=='pending'">
+    <div>
+        <label>Id: </label> {{aeroplane.aeroplaneId}}
+    </div>
+    <div>
+        <label>Aeroplane Name: </label> {{aeroplane.aeroplaneName}}
+    </div>
+    <div>
+        <label>Aeroplane Company Name: </label> {{aeroplane.aeroplaneCompanyName}}
+    </div>
+   
+    <label>Status: </label> 
+    <span class="button is-small btn-info" (click)="acceptPilot(aeroplane.aeroplanePilotStatus,aeroplane.aeroplaneId)">Accept</span> 
+    <span class="button is-small btn-info" (click)="rejectPilot(aeroplane.aeroplanePilotStatus,aeroplane.aeroplaneId)">Reject</span> 
+    <hr/>
+</div>  
